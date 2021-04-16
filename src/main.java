@@ -44,6 +44,5 @@ public class main {
         UserInputThread userInputThread = new UserInputThread();
         userInputThread.start();
 
-        System.out.println("test");
     }
 }
