@@ -12,7 +12,7 @@ public class UserInputThread extends Thread {
     }
 
     private void waitForUserInput() {
-        System.out.println("\nEnter anything in order to get a new Thread started.\n");
+        System.out.println("\nEnter anything in order to get a new NumberThread started.\n");
 
         Scanner sc = new Scanner(System.in);
         while (sc.hasNext()) {
