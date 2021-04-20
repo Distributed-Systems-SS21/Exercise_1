@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class UserInputThread extends Thread {
 
@@ -17,10 +18,28 @@ public class UserInputThread extends Thread {
         Scanner sc = new Scanner(System.in);
         while (sc.hasNext()) {
             if (sc.nextLine() != null) {
-                NumberThread numberThread = new NumberThread(counter);
-                numberThread.start();
+                startNewNumberThread(counter);
                 counter++;
             }
         }
     }
+
+    private void startNewNumberThread(int counter) {
+        Thread numberThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i < 5; i++){
+                    System.out.println(counter);
+
+                    try {
+                        TimeUnit.SECONDS.sleep(3);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+        numberThread.start();
+    }
+
 }

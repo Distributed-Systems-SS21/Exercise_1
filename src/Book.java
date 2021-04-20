@@ -9,14 +9,10 @@ public class Book extends Publication {
         this.isbn = isbn;
     }
 
-    @Override
-    public String toString() {
-        return "Book{" +
-                "author='" + author + '\'' +
-                ", isbn='" + isbn + '\'' +
-                ", title='" + title + '\'' +
-                ", language='" + language + '\'' +
-                ", price=" + price +
-                '}';
+    public void print() {
+        super.print();
+        System.out.println("\t,author='" + author + '\'' +
+                ", isbn='" + isbn + '\'' );
     }
+
 }

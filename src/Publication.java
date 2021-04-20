@@ -1,8 +1,8 @@
 public class Publication {
 
-    protected String title;
-    protected String language;
-    protected double price;
+    private final String title;
+    private final String language;
+    private final double price;
 
     public Publication(String title, String language, double price) {
         this.title = title;
@@ -10,12 +10,10 @@ public class Publication {
         this.price = price;
     }
 
-    @Override
-    public String toString() {
-        return "Publication{" +
-                "title='" + title + '\'' +
+    public void print() {
+        System.out.println("title='" + title + '\'' +
                 ", language='" + language + '\'' +
-                ", price=" + price +
-                '}';
+                ", price=" + price);
     }
+
 }

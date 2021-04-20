@@ -2,7 +2,7 @@ import java.util.concurrent.TimeUnit;
 
 public class NumberThread extends Thread {
 
-    private int number;
+    private final int number;
 
     public NumberThread(int number) {
         this.number = number;
@@ -11,12 +11,12 @@ public class NumberThread extends Thread {
     @Override
     public void run() {
         super.run();
-        printNumber(5);
+        printNumber();
     }
 
-    private void printNumber(int howManyTimes) {
+    private void printNumber() {
 
-        for (int i = 0; i < howManyTimes; i++){
+        for (int i = 0; i < 5; i++){
             System.out.println(this.number);
 
             try {

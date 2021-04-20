@@ -16,9 +16,10 @@ public class main {
         differentPublications.add(new Publication("Focus", "German", 9.55));
         differentPublications.add(new Book("Bestselling Book", "English", 14.65, "Bestselling Author", "978-3-86680-192-9"));
 
-        for (Publication i : differentPublications) System.out.println(i);
+        for (Publication i : differentPublications) i.print();
     }
 
+    // TODO: Use args of main function
     public static void exercise3() {
         HashSet<String> userInputs= new HashSet<String>();
 
@@ -40,8 +41,6 @@ public class main {
     }
 
     public static void exercise4() {
-        NumberThread numberThread = new NumberThread(3);
-        numberThread.start();
 
         UserInputThread userInputThread = new UserInputThread();
         userInputThread.start();
